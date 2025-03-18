@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kuba-\\Desktop\\MvxdEngine\\",
+  "WorkspaceRootPath": "F:\\MvxdEngine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F6F0FCB-2B66-4AB2-B8E7-117C74A8C462}|Engine\\Engine.vcxproj|C:\\Users\\kuba-\\Desktop\\MvxdEngine\\Engine\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{0F6F0FCB-2B66-4AB2-B8E7-117C74A8C462}|Engine\\Engine.vcxproj|F:\\MvxdEngine\\Engine\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0F6F0FCB-2B66-4AB2-B8E7-117C74A8C462}|Engine\\Engine.vcxproj|solutionrelative:Engine\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F6F0FCB-2B66-4AB2-B8E7-117C74A8C462}|Engine\\Engine.vcxproj|F:\\MvxdEngine\\Engine\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0F6F0FCB-2B66-4AB2-B8E7-117C74A8C462}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F6F0FCB-2B66-4AB2-B8E7-117C74A8C462}|Engine\\Engine.vcxproj|F:\\MvxdEngine\\Engine\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0F6F0FCB-2B66-4AB2-B8E7-117C74A8C462}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,36 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1577,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\kuba-\\Desktop\\MvxdEngine\\Engine\\main.cpp",
+              "DocumentMoniker": "F:\\MvxdEngine\\Engine\\main.cpp",
               "RelativeDocumentMoniker": "Engine\\main.cpp",
-              "ToolTip": "C:\\Users\\kuba-\\Desktop\\MvxdEngine\\Engine\\main.cpp",
+              "ToolTip": "F:\\MvxdEngine\\Engine\\main.cpp",
               "RelativeToolTip": "Engine\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-17T16:48:50.234Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Renderer.cpp",
+              "DocumentMoniker": "F:\\MvxdEngine\\Engine\\Renderer.cpp",
+              "RelativeDocumentMoniker": "Engine\\Renderer.cpp",
+              "ToolTip": "F:\\MvxdEngine\\Engine\\Renderer.cpp",
+              "RelativeToolTip": "Engine\\Renderer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-18T20:18:26.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Renderer.h",
+              "DocumentMoniker": "F:\\MvxdEngine\\Engine\\Renderer.h",
+              "RelativeDocumentMoniker": "Engine\\Renderer.h",
+              "ToolTip": "F:\\MvxdEngine\\Engine\\Renderer.h",
+              "RelativeToolTip": "Engine\\Renderer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-18T20:11:17.835Z"
             }
           ]
         }
