@@ -1,94 +1,111 @@
-# MvxdEngine
-
-The best order to create a 3D game engine depends on your goals, but here’s a solid roadmap to follow:
-*Roadmap that ChatGPT gave me and ill just follow it along very likely*
-
-### **Phase 1: Core Foundation**
-1. **Windowing System**  
-   - Use libraries like SDL, GLFW, or custom platform-specific code *For 1st chatGPT told me to use a library and ill use it for a bit but im going to build a windowing system on my own by using WinAPI*.
-   - Handle window creation, resizing, and closing.
-
-2. **Rendering Engine (Basic Setup)**
-   - Initialize OpenGL, Vulkan, or DirectX.
-   - Create a basic rendering pipeline with a triangle.
-
-3. **Input Handling**
-   - Capture keyboard, mouse, and gamepad inputs.
-   - Implement event-driven or polling-based input systems.
-
-4. **Basic Resource Management**
-   - Load shaders from files.
-   - Implement a basic asset manager.
+**3D engine using OpenGL with a Vulkan backend**:  
 
 ---
 
-### **Phase 2: 3D Rendering Pipeline**
-5. **Camera System**
-   - Implement a simple FPS-style or orbital camera.
-   - Support projection and view transformations.
+# **Phase 1: Core Foundation**
+### **1. Windowing System**
+- Use **GLFW** for cross-platform windowing with OpenGL and Vulkan support.  
+- Support **window resizing, closing events, and multi-monitor setups**.  
+- Implement a system to **switch between OpenGL and Vulkan dynamically**.  
 
-6. **Model Loading**
-   - Implement a simple OBJ or glTF loader.
-   - Support basic materials and textures.
+### **2. Rendering Engine (Basic Setup)**
+- Initialize **both OpenGL and Vulkan backends**.  
+- Set up a **basic rendering pipeline** for each:
+  - OpenGL → Create VAO/VBO, compile shaders.  
+  - Vulkan → Set up **VkInstance, VkDevice, VkSwapchain**, and create a basic render pass.  
+- Render a **triangle** using both OpenGL and Vulkan to ensure correctness.  
 
-7. **Lighting System**
-   - Implement Phong shading (diffuse, specular, ambient).
-   - Add support for directional, point, and spotlights.
+### **3. Input Handling**
+- Capture **keyboard, mouse, and gamepad inputs** using **GLFW or raw input API**.  
+- Implement **event-driven** and **polling-based** input systems.  
+- Provide an abstraction layer so both OpenGL and Vulkan can use the same input system.  
 
-8. **Entity System (ECS or OOP)**
-   - Decide on ECS (Entity-Component-System) or traditional OOP.
-   - Implement basic game objects with transform properties.
-
----
-
-### **Phase 3: Advanced Rendering & Scene Management**
-9. **Shadow Mapping**
-   - Implement depth-based shadow mapping.
-   - Optimize performance using cascaded shadow maps (CSM).
-
-10. **Post-Processing Effects**
-   - Add bloom, motion blur, depth of field.
-   - Implement HDR rendering.
-
-11. **Scene Management**
-   - Create a scene graph to handle hierarchical transformations.
-   - Implement frustum culling for performance optimization.
+### **4. Basic Resource Management**
+- Implement a **shader system** that can load GLSL/SPIR-V shaders from files.  
+- Create a **basic asset manager** to handle textures, models, and materials.  
+- Ensure assets can be **loaded and shared between OpenGL & Vulkan** efficiently.  
 
 ---
 
-### **Phase 4: Physics & Animation**
-12. **Collision Detection & Physics**
-   - Implement AABB and raycasting.
-   - Integrate a physics engine (Bullet, PhysX, or custom).
+# **Phase 2: 3D Rendering Pipeline**
+### **1. Camera System**
+- Implement **FPS-style and orbital camera controls**.  
+- Use **projection & view transformations** with a common camera class for OpenGL & Vulkan.  
 
-13. **Skeletal Animation**
-   - Implement bone-based animations with interpolation.
-   - Support animation blending.
+### **2. Model Loading**
+- Implement an **OBJ and glTF loader** (glTF preferred for better materials & animations).  
+- Support **basic materials, textures, and normal maps**.  
+- Ensure data is structured properly for **both OpenGL’s VAOs/VBOs and Vulkan’s buffers**.  
 
----
+### **3. Lighting System**
+- Implement **Phong shading** (diffuse, specular, ambient lighting).  
+- Support **directional, point, and spotlights**.  
+- Use **deferred rendering** for better performance.  
 
-### **Phase 5: Game Logic, UI, & Networking**
-14. **Scripting System**
-   - Integrate Lua or Python for game logic.
-   - Expose engine functionality to scripts.
-
-15. **User Interface System**
-   - Create a basic UI framework (buttons, text, sliders).
-   - Implement font rendering using bitmap or SDF fonts.
-
-16. **Networking**
-   - Implement basic multiplayer (TCP/UDP).
-   - Sync game state across clients.
+### **4. Entity System (ECS or OOP)**
+- Choose between:
+  - **ECS-based approach** (fast and scalable, better for Vulkan).  
+  - **Traditional OOP-based game object system** (simpler, but less scalable).  
+- Implement **basic transform (position, rotation, scale) components**.  
 
 ---
 
-### **Phase 6: Final Touches**
-17. **Optimization**
-   - Implement multithreading for rendering & physics.
-   - Optimize asset streaming.
+# **Phase 3: Advanced Rendering & Scene Management**
+### **1. Shadow Mapping**
+- Implement **depth-based shadow mapping** in both OpenGL & Vulkan.  
+- Optimize performance using **cascaded shadow maps (CSM)**.  
 
-18. **Editor / Tools**
-   - Build a simple level editor.
-   - Create debugging tools like in-game console & profiler.
+### **2. Post-Processing Effects**
+- Add **bloom, motion blur, and depth of field**.  
+- Implement **HDR rendering** and tone mapping.  
+- Use a **common post-processing framework** that works for OpenGL and Vulkan.  
 
-Would you like help with any specific step? 🚀
+### **3. Scene Management**
+- Create a **scene graph** for hierarchical transformations.  
+- Implement **frustum culling** to optimize rendering performance.  
+
+---
+
+# **Phase 4: Physics & Animation**
+### **1. Collision Detection & Physics**
+- Implement **AABB (Axis-Aligned Bounding Box) and raycasting** for collision detection.  
+- Integrate a physics engine (**Bullet, PhysX, or a custom solution**).  
+- Ensure physics **works in sync with both OpenGL & Vulkan pipelines**.  
+
+### **2. Skeletal Animation**
+- Implement **bone-based animations** with interpolation.  
+- Support **animation blending** for smooth transitions.  
+- Optimize **GPU skinning for Vulkan and OpenGL**.  
+
+---
+
+# **Phase 5: Game Logic, UI, & Networking**
+### **1. Scripting System**
+- Integrate **Lua or Python** for game logic.  
+- Expose engine functionality to scripts for **flexibility**.  
+
+### **2. User Interface System**
+- Create a **basic UI framework** (buttons, text, sliders).  
+- Implement **font rendering** using bitmap fonts or **SDF fonts** (for scaling).  
+- Ensure UI works **with both OpenGL & Vulkan** (ImGui is a good option).  
+
+### **3. Networking**
+- Implement **basic multiplayer support** (TCP/UDP).  
+- Sync **game state across clients**.  
+- Use a client-server model with **dedicated game loop for networking**.  
+
+---
+
+# **Phase 6: Final Touches**
+### **1. Optimization**
+- Implement **multithreading** for rendering & physics.  
+- Optimize **asset streaming** to reduce load times.  
+
+### **2. Editor / Tools**
+- Build a **simple level editor** for designing scenes.  
+- Create debugging tools like **in-game console & profiler**.  
+
+---
+
+### **Final Thoughts**
+This roadmap balances **OpenGL for easy development** and **Vulkan for performance**. You’ll end up with a **scalable 3D engine** that can dynamically **switch between OpenGL and Vulkan** based on user preference. 🚀  
