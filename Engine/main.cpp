@@ -6,29 +6,32 @@
 #include <iostream>
 #include <stdexcept>
 #include <cstdlib>
+#include "Renderer.h"
 
-class HelloTriangleApplication {
+class Engine {
 public:
     void run() {
         initWindow();
         initVulkan();
         mainLoop();
         cleanup();
+
     }
 
 private:
-    GLFWwindow* window;
 
+    GLFWwindow* window;
     const uint32_t WIDTH = 800;
     const uint32_t HEIGHT = 600;
 
     void initWindow() {
+        glfwInit();
         glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
         glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
         window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
     }
     void initVulkan() {
-
+		Renderer::Init();
     }
 
     void mainLoop() {
@@ -40,11 +43,12 @@ private:
     void cleanup() {
         glfwDestroyWindow(window);
         glfwTerminate();
+		Renderer::Shutdown();
     }
 };
 
 int main() {
-    HelloTriangleApplication app;
+    Engine app;
 
     try {
         app.run();
